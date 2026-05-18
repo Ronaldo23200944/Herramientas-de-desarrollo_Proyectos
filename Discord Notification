@@ -11,5 +11,7 @@ jobs:
         run: |
           curl -H "Content-Type: application/json" \
           -X POST \
-          -d '{"content": "🚀 Nuevo commit en el repositorio!"}' \
+          -d '{
+            "content": "🚀 **Nuevo commit en el repo!**\n👤 Usuario: ${{ github.actor }}\n💬 Mensaje: ${{ github.event.head_commit.message }}\n🔗 Link: ${{ github.event.head_commit.url }}"
+          }' \
           https://discord.com/api/webhooks/1505943598783529063/SNUFtJhj_hJU6tWbef_uarP-dynx7QeAgQiK9GCrP3IHH3H16VSd5oWP3B3t4f10nRiy
